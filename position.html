@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Position of CSS</title>
+    <style>
+      button {
+        margin-top: 20px;
+        margin-left: 200px;
+        padding: 20px;
+        border: none;
+        border-top-left-radius: 12px;
+        border-bottom-right-radius: 12px;
+      }
+      .btn1 {
+        position: static;
+        top: 100px;
+        background-color: chocolate;
+      }
+      .btn2 {
+        position: relative;
+        left: 150px;
+        background-color: rgb(181, 221, 37);
+      }
+      .btn3 {
+        position: absolute;
+        bottom: 420px;
+        right: 200px;
+        background-color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="btn1">Static Login</button>
+    <p>
+      In static- by default all positions are using position static. It will not
+      support top/bottom/left/Right It can be only moved with the margin
+      property only.
+    </p>
+    <button class="btn2">Relative Login</button>
+    <p>
+      In relative - the postion of element is in the flow of document like
+      static. it changes itss position where it normally appears. It allows to
+      adjust top/bottom/left/right and also move with margin etc Relative takes
+      its own space
+    </p>
+    <button class="btn3">Absolute login</button>
+    <p>
+      Abosulte - the position of element does not change place from its normal
+      position it will always change in the reference of its parent only. it
+      does not leaves a gap on a normal position
+      The purpose of absolute position is for overlapping the elements
+
+    </p>
+  </body>
+</html>
