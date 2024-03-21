@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>DropDown-</title>
+    <style>
+      .dropdown-items {
+          display: none;
+          position: absolute;
+          background-color: thistle;
+      }
+      .dropdown:hover .dropdown-items {
+        display: block;
+      }
+      .btn{
+        background-color: antiquewhite;
+        padding: 10px;
+        border: 1px solid gray;
+
+      }
+      .dropdown {
+        width: fit-content;
+
+      }
+      .item {
+        padding: 12px;
+      }
+      .item:hover {
+        background-color: rgb(101, 190, 190);
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="dropdown">
+      <button class="btn">Show Menu</button>
+      <div class="dropdown-items">
+        <div class="item">Home</div>
+        <div class="item">About</div>
+        <div class="item">Pricing</div>
+        <div class="item">Gallery</div>
+        <div class="item">Services</div>
+      </div>
+    </div>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam et quia quasi numquam hic accusantium. Nesciunt iure incidunt cumque consectetur vitae impedit vero laboriosam ad eos voluptates, minus, assumenda iusto temporibus esse natus aut. Veniam ipsa quaerat laboriosam harum cupiditate similique esse sed laborum dicta.</p>
+  </body>
+</html>
