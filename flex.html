@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>flex</title>
+    <style>
+      .container {
+        height: 200px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: flex-end;
+        background-color: rgb(95, 190, 205);
+        gap: 10px;
+      }
+      .child {
+        padding: 22px;
+        border-radius: 10px;
+        font-size: 20px;
+        /* width: fit-content; */
+        background-color: thistle;
+      }
+      .class3{
+        align-self: flex-start;
+      }
+      .parent{
+        width: 600px;
+        height: 500px;
+        margin-top: 20px;
+        gap: 10px;
+        background-color: thistle;
+       display: flex;
+       flex-direction: row;
+       align-content: center;
+       /* align-items: center; */
+       flex-wrap: wrap;
+      }
+      .item{
+        padding: 12px;
+border-radius: 20px;
+        width: 100px;
+        background-color: lightblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="child class1">1</div>
+      <div class="child class2">2</div>
+      <div class="child class3">3</div>
+      <div class="child class4">4</div>
+      <div class="child class5">5</div>
+    </div>
+    <div class="parent">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">9</div>
+    </div>
+  </body>
+</html>
