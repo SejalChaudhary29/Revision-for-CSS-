@@ -1,2 +1,19 @@
 Javasript is a browser specific  language which can handle user interaction .
 Javascript has a unique way of interacting with HTML elements called as DOM manipulation.
+
+DOM - Document Object model 
+#document is a html  
+#object is a representation of data with attributes with key and value pairs
+#DOM is a object representation as HTML Elements.
+Dom is a programming interface for web documents hat allows us to create, change or remove elements from the document.
+//DOM example
+<h1 style='color: gren'> Hey </h1>
+
+{
+    name: 'h1',
+    style: '{
+        color:red
+        }',
+    innerHTML:'Hey' 
+}
+why we needed a DOM: We needed dom to edit the element from JS insted of editing within the HTML element 
