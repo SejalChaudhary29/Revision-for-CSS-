@@ -1,0 +1,2 @@
+Javasript is a browser specific  language which can handle user interaction .
+Javascript has a unique way of interacting with HTML elements called as DOM manipulation.
