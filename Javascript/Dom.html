@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Manipulation</title>
+<style>
+    .container{
+        width: 300px;
+        height: 400px;
+        background-color: aquamarine;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .parent{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+    input , button{
+        padding: 4px;
+        width: 200px;
+        border-radius: 12px;
+        
+    }
+    span{
+        font-weight: 600;
+        color: red;
+        display: none;
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="parent">
+            <input type="text" id="username">
+            <input type="password" id="password">
+            <button onclick='login()'>Login</button>
+            <span id="error-msg"> Login Failed</span>
+        </div>
+    </div>
+    <script>
+let username = document.getElementById('username')
+let password = document.getElementById('password')
+let loginMsg = document.getElementById('error-msg')
+function login(){
+    if(username.value === '' && password.value === ''){
+      loginMsg.style.display = 'inline-block'
+      loginMsg.style.color = 'Gray'
+      loginMsg.innerText = 'Please enter username and password'
+    }
+    if(username.value ==='sejal' && password.value ==='sejal@'){
+    window.location.href='https://www.google.com'
+    loginMsg.style.display = 'inline-block'
+    loginMsg.style.color = 'green'
+    loginMsg.innerText= 'Login success'
+} else{
+    loginMsg.style.display = "inline-block"
+
+
+}}
+
+    </script>
+</body>
+</html>
