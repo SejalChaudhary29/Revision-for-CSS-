@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Looping Array</title>
+    <style>
+        button{
+            padding: 13px;
+            margin: 5px;
+
+        }
+        button:hover{
+            background-color: #48dacb;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="container"></div>
+    <div id="parent"></div>
+    <script>
+
+        let names = ['Hi','Hello','Bye', 'Good Morning' , 'Good Night']
+        let container = document.getElementById('container')
+         
+        for(i=0; i<names.length; i++){
+            container.innerHTML += `<h1> Names ${i} ${names[i]} </h1>`
+        }
+
+        let parent = document.getElementById('parent')
+        for(i=0; i<=100; i++){
+                parent.innerHTML += `<button> ${i}</button>`
+        }
+
+    </script>
+</body>
+</html>
