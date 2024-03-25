@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="parent">
+        <button onclick="generate()">Create</button>
+    </div>
+   
+
+    <script>
+        let parent= document.getElementById('parent')
+        let  heading = document.createElement('h1')
+         
+        parent.appendChild(heading)
+        count = 1
+        function generate(){
+        heading.innerHTML += `hello there ${count}`
+        count++
+
+        }
+
+        let parents = document.getElementById('parent')
+        let headings = document.createElement('h1')
+
+        parents.appendChild(headings)
+        counts = 1
+        function generates(){
+            parents.innerHTML += `<h1> This is generate ${counts}  </h1>`
+            parents.style.color ='purple'
+            counts++
+        }
+
+       
+
+      
+    </script>
+</body>
+</html>
