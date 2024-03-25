@@ -4,10 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        button{
+            background-color: rgb(50, 210, 210);
+            padding: 12px;
+            color: aliceblue;
+            border: 1px solid gray;
+            border-radius: 12px;
+        }
+        button:hover{
+            background-color: rgb(244, 148, 23);
+            color: black
+        }
+    </style>
 </head>
 <body>
     <div id="parent">
         <button onclick="generate()">Create</button>
+    </div>
+    <div id="parents">
+        <button onclick="generates()"> click me</button>
     </div>
    
 
@@ -18,15 +34,14 @@
         parent.appendChild(heading)
         count = 1
         function generate(){
-        heading.innerHTML += `hello there ${count}`
+        heading.innerHTML += `Why to generate${count}`
         count++
 
         }
 
-        let parents = document.getElementById('parent')
-        let headings = document.createElement('h1')
-
-        parents.appendChild(headings)
+        let parents = document.getElementById('parents')
+        
+     
         counts = 1
         function generates(){
             parents.innerHTML += `<h1> This is generate ${counts}  </h1>`
