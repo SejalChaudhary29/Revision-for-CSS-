@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>this and id</title>
+</head>
+<body>
+    <div id="parent"></div>
+    <div id="container"></div>
+    
+    <script>
+        let parent = document.getElementById('parent');
+        for (let i = 0; i <= 100; i++) {
+            parent.innerHTML += `<button id='btn${i}' onclick='update(${i})'>${i}</button>`;
+        }
+
+        function update(id) {
+            let btnId = `btn${id}`;
+            let btn = document.getElementById(btnId);
+            btn.style.visibility = 'hidden';
+        }
+
+        ///////this - this refers to current  context or object //////
+        let container = document.getElementById('container');
+        for (let i = 0; i <= 100; i++) {
+            parent.innerHTML += `<button id='btn${i}' onclick='change(this)'>${i}</button>`;
+        }
+        function change(id){
+           
+            id.style.visibility = 'hidden'
+
+        }
+
+    </script>
+</body>
+</html>
