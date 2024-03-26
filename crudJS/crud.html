@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crud with dom</title>
+
+    <style>
+        body{
+            background-color:whitesmoke;
+        }
+      .info {
+        display: flex;
+        justify-content: start;
+        align-content: center;
+
+        margin: 10px;
+        gap: 10px;
+      }
+      input {
+        width: 250px;
+        text-align: center;
+        padding: 5px;
+        border-radius: 3px;
+        color: gray;
+      }
+      .addbtn {
+        background-color: rgb(37, 245, 37);
+        color: #ffffff;
+      }
+      .container {
+        display: inline-block;
+        margin: 12px;
+        padding: 12px;
+        background-color: #eec4c4;
+      }
+      .actor {
+        color: #6a36e3;
+      }
+      button {
+        padding: 4px;
+        border: none;
+        padding: 8px;
+        border-radius: 10px;
+        width: 60px;
+        background-color: aliceblue;
+      }
+      .btn {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+      }
+      .editbtn {
+        background-color: yellow;
+        color: black;
+      }
+      .deletebtn {
+        background-color: rgb(255, 0, 0);
+        color: #ffffff;
+      }
+      .child {
+        text-align: center;
+      }
+      #search{
+        display: inline-block;
+        border-radius: 12px;
+        width: 20%;
+        margin: 5px;
+        color: #02161b;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="info">
+      <input id="movie" type="text" placeholder="Movie Name" />
+      <input id="actor" type="text" placeholder="Actor Name" />
+      <input id="rating" type="text" placeholder="Ratings" />
+      <button class="addbtn" id="add" onclick="add()">Add</button>
+    </div>
+    <hr>
+    <input type="text" id="search" onkeyup="searchMovies()">
+
+    <div id="parent"></div>
+    <script>
+      let movies = [
+        {
+          name: "Inception",
+          actor: "Leonardo DiCaprio",
+          rating: 8.8,
+        },
+        {
+          name: "The Shawshank Redemption",
+          actor: "Tim Robbins",
+          rating: 9.3,
+        },
+        {
+          name: "The Godfather",
+          actor: "Marlon Brando",
+          rating: 9.2,
+        },
+        {
+          name: "The Dark Knight",
+          actor: "Christian Bale",
+          rating: 9.0,
+        },
+        {
+          name: "Pulp Fiction",
+          actor: "John Travolta",
+          rating: 8.9,
+        },
+      ];
+
+      function add() {
+        let movie = document.getElementById("movie").value;
+        let actor = document.getElementById("actor").value;
+        let rating = document.getElementById("rating").value;
+        
+        let newMovie = { name: movie, actor: actor, rating: rating };
+        // let newMovie = { name: movie, actor: actor, rating: rating };
+        movies.push(newMovie);
+
+        renderMovies();
+      }
+
+      function deleteMovie(index){
+       let result = confirm(`Are you sure you want to delete '${movies[index].name}'?`)
+        if(result){
+            movies.splice(index , 1)
+            renderMovies()
+        }
+
+      }
+
+      function searchMovies(){
+        let search = document.getElementById('search')
+        let searchText = search.value.toLowerCase()
+        let  searchResult = movies.filter(movie=>{
+            return movie.name.toLocaleLowerCase().includes(searchText)
+        })
+        renderMovies(searchResult)
+      }
+
+      function renderMovies(source=movies) {
+        let parent = document.getElementById("parent");
+        parent.innerHTML = "";
+
+        for (let i = 0; i < movies.length; i++) {
+          parent.innerHTML += `<div class='container'>
+            <div class='child name'> ${source[i].name}</div>
+            <div class='child actor'> ${source[i].actor}</div>
+            <div class='child rating'> ${source[i].rating}</div>
+            <div class='btn'>
+            <button class='editbtn'>Edit</button>
+            <button class='deletebtn' onclick=deleteMovie(${i})>Delete</button>
+            </div>
+          </div>`;
+        }
+      }
+
+      renderMovies();
+    </script>
+  </body>
+</html>
